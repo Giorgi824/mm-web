@@ -502,7 +502,8 @@ footer {
     flex-direction: column;
     gap: 180px;
     > div:nth-child(even) {
-      > span {
+      > span,
+      .hovered-boxes {
         order: 1;
       }
       > div {
@@ -511,12 +512,18 @@ footer {
     }
     > div:nth-child(odd) {
       gap: 120px;
-      > span {
+      > span,
+      .hovered-boxes {
         order: -1;
       }
     }
     > div {
       display: flex;
+      .hovered-boxes {
+        flex-grow: 1;
+        background-color: #f1f1f1;
+        max-width: 800px;
+      }
       > span {
         height: var(--lg-size);
         flex-grow: 1;
@@ -535,6 +542,7 @@ footer {
         flex-direction: column;
         justify-content: center;
         gap: 24px;
+        max-width: 600px;
         .box-title {
           font-size: 48px;
           max-width: 355px;

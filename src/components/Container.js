@@ -33,8 +33,10 @@ const Container = () => {
             title="მარტივი გადახდები"
             text="მარტივად გადაიხადეთ კომუნალური და სხვა გადასახადები. "
             btn="ნახე მეტი"
-            cond={true}
-          />
+            cond={false}
+          >
+            <div>123</div>
+          </BoxList>
           <BoxList
             indClass="mobile-fill"
             src="img/black.png"
@@ -43,7 +45,9 @@ const Container = () => {
             text="შეავსეთ 500-მდე მობილური ოპერატორის ბალანსი. "
             btn="ნახე მეტი"
             cond={false}
-          />
+          >
+            <div>321</div>
+          </BoxList>
           <BoxList
             indClass="gamblig-icon"
             src="img/black.png"
@@ -60,7 +64,7 @@ const Container = () => {
             title="მარტივი გადარიცხვა"
             text="გადარიცხე თანხა მეგობართან"
             btn="ნახე მეტი"
-            cond={false}
+            cond={true}
           />
         </div>
       </div>

@@ -1,11 +1,27 @@
 import Button from "./Button";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import BoxListItem from "./BoxListItem";
 const BoxList = (props) => {
   return (
     <div>
-      <span>
-        <LazyLoadImage src={props.src} />
-      </span>
+      {props.cond ? (
+        <span>
+          <LazyLoadImage src={props.src} />
+        </span>
+      ) : (
+        <>
+          <div className="hovered-boxes">
+            <BoxListItem
+              icon={"lampSvg"}
+              title={"test1"}
+              text={"sadsad"}
+              smallIcon={"arrowSvg"}
+            >
+              {props.children}
+            </BoxListItem>
+          </div>
+        </>
+      )}
       <div className="boxes-content">
         <span
           data-svg={props.icon}
