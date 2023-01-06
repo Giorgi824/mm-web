@@ -29,28 +29,32 @@ const ThemeMode = () => {
   return (
     <div className="dark-light-mode">
       <div>
-        <button
-          onClick={function (e) {
-            btnFunc(e);
-          }}
-          className="light"
-          role="mode switch"
-          arial-label="light mode"
-          data-svg="sunSvg"
-        >
-          <span>ღია</span>
-        </button>
-        <button
-          onClick={function (e) {
-            btnFunc(e);
-          }}
-          className="dark"
-          role="mode switch"
-          arial-label="dark mode"
-          data-svg="moonSvg"
-        >
-          <span>მუქი</span>
-        </button>
+        <div className="mm-btn-div mm-light">
+          <button
+            onClick={function (e) {
+              btnFunc(e);
+            }}
+            className="light"
+            role="mode switch"
+            arial-label="light mode"
+            data-svg="sunSvg"
+          >
+            <span>ღია</span>
+          </button>
+        </div>
+        <div className="mm-btn-div mm-dark">
+          <button
+            onClick={function (e) {
+              btnFunc(e);
+            }}
+            className="dark"
+            role="mode switch"
+            arial-label="dark mode"
+            data-svg="moonSvg"
+          >
+            <span>მუქი</span>
+          </button>
+        </div>
       </div>
     </div>
   );

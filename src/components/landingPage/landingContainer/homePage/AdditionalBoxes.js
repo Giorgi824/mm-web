@@ -1,46 +1,39 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+import svges from "../../../../svges";
 const AdditionalBoxes = () => {
+  const [boxes, setBoxes] = useState([]);
+  const url = "http://localhost:3000/boxes";
+  const allAdditionalBoxes = async () => {
+    try {
+      const response = await axios(url);
+      const data = response.data;
+      setBoxes(data);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+  useEffect(() => {
+    const namedTime = setTimeout(() => {
+      console.log("test");
+      allAdditionalBoxes();
+    }, 200);
+
+    return () => {
+      clearTimeout(namedTime);
+    };
+  }, []);
   return (
     <div className="additional-boxes">
-      <div className="box-item" data-svg="mobilefillSvg">
-        <div>მობილურის შევსება</div>
-        <p>
-          შეავსეთ 500-მდე მობილური ოპერატორის ბალანსი. შეავსეთ 500-მდე მობილური
-        </p>
-      </div>
-      <div className="box-item" data-svg="simplepaySvg">
-        <div>მარტივი გადახდები</div>
-        <p>მარტივად გადაიხადეთ კომუნალური და სხვა გადასახადები.</p>
-      </div>
-      <div className="box-item" data-svg="gamblingSvg">
-        <div>გემბლინგი მარტივად</div>
-        <p>ერთი კლიკით შეავსეთ და განააღდეთ თანხა გემბლინგ ანგარიშებიდან.</p>
-      </div>
-      <div className="box-item" data-svg="simpletransferSvg">
-        <div>მარტივი გადარიცხვა</div>
-        <p>
-          გადარიცხე თანხა მეგობართან , მეგობართან.... გადარიცხე თანხა მეგობართან
-        </p>
-      </div>
-      <div className="box-item" data-svg="mobilefillSvg">
-        <div>მობილურის შევსება</div>
-        <p>
-          შეავსეთ 500-მდე მობილური ოპერატორის ბალანსი. შეავსეთ 500-მდე მობილური
-        </p>
-      </div>
-      <div className="box-item" data-svg="simplepaySvg">
-        <div>მარტივი გადახდები</div>
-        <p>მარტივად გადაიხადეთ კომუნალური და სხვა გადასახადები.</p>
-      </div>
-      <div className="box-item" data-svg="gamblingSvg">
-        <div>გემბლინგი მარტივად</div>
-        <p>ერთი კლიკით შეავსეთ და განააღდეთ თანხა გემბლინგ ანგარიშებიდან.</p>
-      </div>
-      <div className="box-item" data-svg="simpletransferSvg">
-        <div>მარტივი გადარიცხვა</div>
-        <p>
-          გადარიცხე თანხა მეგობართან , მეგობართან.... გადარიცხე თანხა მეგობართან
-        </p>
-      </div>
+      {boxes.map((item) => {
+        return (
+          <div key={item.id} className={item.clName} data-svg={item.svg}>
+            <span dangerouslySetInnerHTML={{ __html: svges[item.svg] }}></span>
+            <div>{item.title}</div>
+            <p>{item.text}</p>
+          </div>
+        );
+      })}
     </div>
   );
 };

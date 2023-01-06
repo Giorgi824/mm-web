@@ -1,7 +1,36 @@
+import { useState } from "react";
 import Button from "./Button";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import BoxListItem from "./BoxListItem";
+import BoxSingle from "./BoxSingle";
+import svges from "../svges";
+import BoxesContent from "./BoxesContent";
 const BoxList = (props) => {
+  const testing = [
+    {
+      icon: "lampSvg",
+      title: "test 1",
+      text: "lorem 1",
+      smallIcon: "arrowSvg",
+    },
+    {
+      icon: "lampSvg",
+      title: "test 2222",
+      text: "lorem 2",
+      smallIcon: "arrowSvg",
+    },
+    {
+      icon: "lampSvg",
+      title: "test 3",
+      text: "lorem 3",
+      smallIcon: "arrowSvg",
+    },
+    {
+      icon: "lampSvg",
+      title: "test 4",
+      text: "lorem 4",
+      smallIcon: "arrowSvg",
+    },
+  ];
   return (
     <div>
       {props.cond ? (
@@ -9,28 +38,29 @@ const BoxList = (props) => {
           <LazyLoadImage src={props.src} />
         </span>
       ) : (
-        <>
-          <div className="hovered-boxes">
-            <BoxListItem
-              icon={"lampSvg"}
-              title={"test1"}
-              text={"sadsad"}
-              smallIcon={"arrowSvg"}
-            >
-              {props.children}
-            </BoxListItem>
-          </div>
-        </>
+        <div className="hovered-boxes">
+          {testing.map((item) => {
+            return (
+              <BoxSingle
+                key={Math.random()}
+                icon={item.icon}
+                title={item.title}
+                text={item.text}
+                smallIcon={item.smallIcon}
+              >
+                {props.children}
+              </BoxSingle>
+            );
+          })}
+        </div>
       )}
-      <div className="boxes-content">
-        <span
-          data-svg={props.icon}
-          className={`box-icon ${props.indClass}`}
-        ></span>
-        <div className="box-title">{props.title}</div>
-        <p>{props.text}</p>
-        <Button>{props.btn}</Button>
-      </div>
+      <BoxesContent
+        icon={props.icon}
+        indClass={props.indClass}
+        text={props.text}
+        title={props.title}
+        btn={props.btn}
+      />
     </div>
   );
 };

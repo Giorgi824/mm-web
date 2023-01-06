@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import LanguageBox from "../../bothComponents/LanguageBox";
 const Header = () => {
   return (
-    <header>
+    <header bg-color="red">
       <div className="centered-element">
         <span className="burger" data-svg="burgerSvg"></span>
         <nav>

@@ -1,14 +1,11 @@
-const BoxListItem = ({ children, icon, title, text, smallIcon }) => {
+import svges from "../svges";
+import BoxSingle from "./BoxSingle";
+
+const BoxListItem = () => {
   return (
-    <div className="hovered-box-item">
-      <span className="icon" data-svg={icon}></span>
-      <div className="title-text">
-        <div>{title}</div>
-        <span>{text}</span>
-      </div>
-      <div className="body">{children}</div>
-      <span className="small-icon" data-svg={smallIcon}></span>
-    </div>
+    <>
+      <BoxSingle />
+    </>
   );
 };
 

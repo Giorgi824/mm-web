@@ -1,0 +1,162 @@
+{
+  "boxes": [
+    {
+      "clName": "box-item",
+      "id": "123",
+      "svg": "mobilefillSvg",
+      "title": "მობილურის შევსება",
+      "text": "შეავსეთ 500-მდე მობილური ოპერატორის ბალანსი. შეავსეთ 500-მდე მობილური"
+    },
+    {
+      "clName": "box-item",
+      "id": "345",
+      "svg": "simplepaySvg",
+      "title": "მარტივი გადახდები",
+      "text": "მარტივად გადაიხადეთ კომუნალური და სხვა გადასახადები."
+    },
+    {
+      "clName": "box-item",
+      "id": "678",
+      "svg": "gamblingSvg",
+      "title": "გემბლინგი მარტივად",
+      "text": "ერთი კლიკით შეავსეთ და განააღდეთ თანხა გემბლინგ ანგარიშებიდან."
+    },
+    {
+      "clName": "box-item",
+      "id": "65765345",
+      "svg": "simpletransferSvg",
+      "title": "მარტივი გადარიცხვა",
+      "text": "გადარიცხე თანხა მეგობართან , მეგობართან.... გადარიცხე თანხა მეგობართან"
+    },
+    {
+      "clName": "box-item",
+      "id": "4523436",
+      "svg": "mobilefillSvg",
+      "title": "მობილურის შევსება",
+      "text": "შეავსეთ 500-მდე მობილური ოპერატორის ბალანსი. შეავსეთ 500-მდე მობილური"
+    },
+    {
+      "clName": "box-item",
+      "id": "87985674",
+      "svg": "simplepaySvg",
+      "title": "მარტივი გადახდები",
+      "text": "მარტივად გადაიხადეთ კომუნალური და სხვა გადასახადები."
+    },
+    {
+      "clName": "box-item",
+      "id": "13244356758",
+      "svg": "gamblingSvg",
+      "title": "გემბლინგი მარტივად",
+      "text": "ერთი კლიკით შეავსეთ და განააღდეთ თანხა გემბლინგ ანგარიშებიდან."
+    },
+    {
+      "clName": "box-item",
+      "id": "67845e62435768",
+      "svg": "simpletransferSvg",
+      "title": "მარტივი გადარიცხვა",
+      "text": "გადარიცხე თანხა მეგობართან , მეგობართან.... გადარიცხე თანხა მეგობართან"
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "specClass": "simple-pay",
+      "imgSrc": "img/black.png",
+      "svgName": "simplepaySvg",
+      "serviceTitle": "მარტივი გადახდები",
+      "serviceContent": "მარტივად გადაიხადეთ კომუნალური და სხვა გადასახადები.",
+      "serviceBtnText": "ნახე მეტი",
+      "cond": "0"
+    },
+    {
+      "id": "2",
+      "specClass": "mobile-fill",
+      "imgSrc": "img/black.png",
+      "svgName": "simplepaySvg",
+      "serviceTitle": "მობილურის შევსება",
+      "serviceContent": "შეავსეთ 500-მდე მობილური ოპერატორის ბალანსი. ",
+      "serviceBtnText": "ნახე მეტი",
+      "cond": "0"
+    },
+    {
+      "id": "3",
+      "specClass": "gamblig-icon",
+      "imgSrc": "img/black.png",
+      "svgName": "gamblingSvg",
+      "serviceTitle": "გემბლინგი მარტივად",
+      "serviceContent": "ერთი კლიკით შეავსეთ და განააღდეთ თანხა გემბლინგ ანგარიშებიდან.",
+      "serviceBtnText": "ნახე მეტი",
+      "cond": "1"
+    },
+    {
+      "id": "4",
+      "specClass": "simple-transfer",
+      "imgSrc": "img/black.png",
+      "svgName": "simpletransferSvg",
+      "serviceTitle": "მარტივი გადარიცხვა",
+      "serviceContent": "გადარიცხე თანხა მეგობართან",
+      "serviceBtnText": "ნახე მეტი",
+      "cond": "1"
+    }
+  ],
+  "posibilites": [
+    {
+      "id": "1",
+      "svgIcon": "lampSvg",
+      "title": "კომუნალური გადახდები",
+      "text": "11 პროვაიდერი",
+      "arrow": "arrowSvg"
+    },
+    {
+      "id": "2",
+      "svgIcon": "gameGambling",
+      "title": "აზარტული თამაშები",
+      "text": "6 პროვაიდერი",
+      "arrow": "arrowSvg"
+    },
+    {
+      "id": "3",
+      "svgIcon": "shieldSvg",
+      "title": "ჯარიმები",
+      "text": "2 პროვაიდერი",
+      "arrow": "arrowSvg"
+    },
+    {
+      "id": "4",
+      "svgIcon": "wifiSvg",
+      "title": "კომუნიკაცია და ინტერნეტი",
+      "text": "37 პროვაიდერი",
+      "arrow": "arrowSvg"
+    }
+  ],
+  "cells": [
+    {
+      "id": "1",
+      "svgIcon": "img/geocell.svg",
+      "title": "ჯეოსელი",
+      "text": "მობილური ოპერატორი",
+      "arrow": "moreSvg"
+    },
+    {
+      "id": "2",
+      "svgIcon": "img/magti.svg",
+      "title": "მაგთი",
+      "text": "მობილური ოპერატორი",
+      "arrow": "moreSvg"
+    },
+    {
+      "id": "3",
+      "svgIcon": "img/beeline.svg",
+      "title": "ბილაინი",
+      "text": "მობილური ოპერატორი",
+      "arrow": "moreSvg"
+    },
+    {
+      "id": "4",
+      "svgIcon": "img/bani.svg",
+      "title": "ბანი",
+      "text": "მობილური ოპერატორი",
+      "arrow": "moreSvg"
+    }
+  ]
+}

@@ -3,7 +3,32 @@ import Button from "./Button";
 import AppBtns from "./staticComponents/AppBtns";
 import BoxList from "./BoxList";
 import AdditionalServices from "./landingPage/landingContainer/homePage/AdditionalServices";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import svges from "../svges";
+import BoxesContent from "./BoxesContent";
+import BoxSingle from "./BoxSingle";
+import DownloadApp from "./DownloadApp";
 const Container = () => {
+  const [services, setServices] = useState([]);
+  const url = "http://localhost:3000/services";
+  const allServices = async () => {
+    try {
+      const response = await axios(url);
+      const data = response.data;
+      setServices(data);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+  useEffect(() => {
+    const namedTime = setTimeout(() => {
+      allServices();
+    }, 200);
+    return () => {
+      clearTimeout(namedTime);
+    };
+  }, []);
   return (
     <main id="main-element">
       <div className="full-element">
@@ -26,49 +51,34 @@ const Container = () => {
           <p>დამატებითი ინფორმაცია</p>
         </div>
         <div className="box-list">
-          <BoxList
-            indClass="simple-pay"
-            src="img/black.png"
-            icon="simplepaySvg"
-            title="მარტივი გადახდები"
-            text="მარტივად გადაიხადეთ კომუნალური და სხვა გადასახადები. "
-            btn="ნახე მეტი"
-            cond={false}
-          >
-            <div>123</div>
-          </BoxList>
-          <BoxList
-            indClass="mobile-fill"
-            src="img/black.png"
-            icon="mobilefillSvg"
-            title="მობილურის შევსება"
-            text="შეავსეთ 500-მდე მობილური ოპერატორის ბალანსი. "
-            btn="ნახე მეტი"
-            cond={false}
-          >
-            <div>321</div>
-          </BoxList>
-          <BoxList
-            indClass="gamblig-icon"
-            src="img/black.png"
-            icon="gamblingSvg"
-            title="გემბლინგი მარტივად"
-            text="ერთი კლიკით შეავსეთ და განააღდეთ თანხა გემბლინგ ანგარიშებიდან."
-            btn="ნახე მეტი"
-            cond={true}
-          />
-          <BoxList
-            indClass="simple-transfer"
-            src="img/black.png"
-            icon="simpletransferSvg"
-            title="მარტივი გადარიცხვა"
-            text="გადარიცხე თანხა მეგობართან"
-            btn="ნახე მეტი"
-            cond={true}
-          />
+          <div>
+            <div className="hovered-boxes">
+              <BoxSingle url={`http://localhost:3000/posibilites`} />
+            </div>
+            <BoxesContent url={`http://localhost:3000/services/1`} />
+          </div>
+          <div>
+            <div className="hovered-boxes">
+              <BoxSingle url={`http://localhost:3000/cells`} />
+            </div>
+            <BoxesContent url={`http://localhost:3000/services/2`} />
+          </div>
+          <div>
+            <span>
+              <LazyLoadImage src="./img/black.png" />
+            </span>
+            <BoxesContent url={`http://localhost:3000/services/3`} />
+          </div>
+          <div>
+            <span>
+              <LazyLoadImage src="./img/black.png" />
+            </span>
+            <BoxesContent url={`http://localhost:3000/services/4  `} />
+          </div>
         </div>
       </div>
       <AdditionalServices />
+      <DownloadApp />
       <div className="container-boxes centered-element">
         <div className="boxes-general-title">
           <h2>კონტაქტი</h2>
